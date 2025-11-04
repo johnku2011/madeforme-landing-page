@@ -43,7 +43,7 @@ export default function Home() {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
-    alert('Thank you for your interest! We will get back to you soon.');
+    alert('Stay tuned! We will be launching soon.');
     setFormData({ name: '', company: '', email: '', message: '' });
   };
 
@@ -731,6 +731,25 @@ export default function Home() {
       {/* CTA / Contact */}
       <section id="contact" className="py-20 bg-gradient-to-b from-[#F5F0E9] to-[#E5DDD0]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#6B5B4F] text-center mb-6">
+            Ready to Redefine Beauty with AI?
+          </h2>
+          
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+            <div className="text-center p-6">
+              <h3 className="font-bold text-[#6B5B4F] mb-2">For Brands</h3>
+              <p className="text-[#3C2F2F]">License our AI-discovered actives</p>
+            </div>
+            <div className="text-center p-6">
+              <h3 className="font-bold text-[#6B5B4F] mb-2">For Partners</h3>
+              <p className="text-[#3C2F2F]">Custom R&D collaboration</p>
+            </div>
+            <div className="text-center p-6">
+              <h3 className="font-bold text-[#6B5B4F] mb-2">For Investors</h3>
+              <p className="text-[#3C2F2F]">Join the wellness revolution</p>
+            </div>
+          </div>
+
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
