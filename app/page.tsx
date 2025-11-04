@@ -203,7 +203,7 @@ export default function Home() {
                 <div className="text-center">
                   <div className="relative w-full max-w-md mx-auto aspect-[3/4] mb-4">
                     <Image
-                      src="/founder-eunice.jpg"
+                      src="/founder-eunice2.png"
                       alt="Eunice Wai, Founder of Made4Me"
                       fill
                       className="object-cover rounded-lg"
