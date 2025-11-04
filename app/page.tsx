@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { 
   Menu, X, ChevronDown, Sparkles, FlaskConical, Leaf, 
   TrendingUp, Target, Users, Mail, Linkedin, Instagram,
@@ -194,10 +195,16 @@ export default function Home() {
           
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1">
-              <div className="bg-[#F5F0E9] rounded-2xl p-8 h-96 flex items-center justify-center">
+              <div className="bg-[#F5F0E9] rounded-2xl p-8 overflow-hidden">
                 <div className="text-center">
-                  <div className="w-48 h-48 mx-auto bg-[#6B5B4F] rounded-full mb-4 flex items-center justify-center">
-                    <Users size={80} className="text-white" />
+                  <div className="relative w-full max-w-md mx-auto aspect-[4/3] mb-4">
+                    <Image
+                      src="/founder-eunice2.png"
+                      alt="Eunice Wai, Founder of Made4Me"
+                      fill
+                      className="object-contain rounded-lg"
+                      priority
+                    />
                   </div>
                   <p className="text-[#3C2F2F] italic">Eunice Wai (21 years old), Founder</p>
                 </div>
