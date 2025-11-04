@@ -184,8 +184,8 @@ export default function TermsOfUse() {
             </p>
             <div className="bg-[#F5F0E9] p-6 rounded-lg mt-4">
               <p><strong>Made4Me AI Molecular Beauty Lab</strong></p>
-              <p>Email: hello@made4me.ai</p>
               <p>Location: Macao SAR</p>
+              <p>Contact: Via website contact form</p>
             </div>
           </section>
 

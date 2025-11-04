@@ -46,7 +46,7 @@ This document tracks assets and content that need to be added or updated before 
 ## 📝 Content Updates
 
 ### Contact Information
-- [ ] Verify email: hello@made4me.ai is set up
+- [ ] Set up business email when ready
 - [ ] Add actual social media links:
   - LinkedIn profile URL
   - Instagram profile URL  

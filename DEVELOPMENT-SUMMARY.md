@@ -268,8 +268,8 @@ For questions about this codebase:
 - All code is documented inline
 
 For Made4Me business inquiries:
-- Email: hello@made4me.ai
 - Location: Macao SAR
+- Contact: Via website contact form
 
 ---
 

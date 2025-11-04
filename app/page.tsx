@@ -820,12 +820,6 @@ export default function Home() {
             </form>
 
             <div className="mt-8 pt-8 border-t border-gray-200 text-center space-y-3">
-              <div className="flex items-center justify-center gap-2 text-[#3C2F2F]">
-                <Mail size={20} className="text-[#D98C5A]" />
-                <a href="mailto:hello@made4me.ai" className="hover:text-[#D98C5A] transition-colors">
-                  hello@made4me.ai
-                </a>
-              </div>
               <p className="text-[#3C2F2F]">
                 <span className="text-[#D98C5A]">📍</span> Macao SAR
               </p>
