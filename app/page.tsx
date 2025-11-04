@@ -67,8 +67,14 @@ export default function Home() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-script text-[#6B5B4F]">Made4Me</h1>
-              <p className="text-[10px] tracking-widest text-[#6B5B4F]">AI MOLECULAR BEAUTY LAB</p>
+        <Image
+                src="/logo.png"
+                alt="Made4Me - AI Molecular Beauty Lab"
+                width={150}
+                height={60}
+                className="object-contain"
+          priority
+        />
             </div>
 
             {/* Desktop Menu */}
@@ -176,9 +182,14 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="text-center">
-              <h2 className="text-4xl sm:text-5xl font-script text-[#6B5B4F] mb-2">Made4Me</h2>
-              <p className="text-sm tracking-widest text-[#6B5B4F]">AI MOLECULAR BEAUTY LAB</p>
+            <div className="text-center flex justify-center">
+              <Image
+                src="/logo.png"
+                alt="Made4Me - AI Molecular Beauty Lab"
+                width={250}
+                height={100}
+                className="object-contain"
+              />
             </div>
           </div>
         </div>
@@ -675,7 +686,7 @@ export default function Home() {
                 <p className="text-[#3C2F2F]">
                   MSc Computer Science (HKU)<br />
                   AI & data expert<br />
-                  9+ years marketing experience
+                  12+ years AI/data experience, 6+ years development experience
                 </p>
               </div>
             </div>
@@ -837,9 +848,14 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#6B5B4F] text-white py-12">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-script mb-2">Made4Me</h2>
-            <p className="text-sm tracking-widest">AI MOLECULAR BEAUTY LAB</p>
+          <div className="text-center mb-8 flex justify-center">
+            <Image
+              src="/logo.png"
+              alt="Made4Me - AI Molecular Beauty Lab"
+              width={200}
+              height={80}
+              className="object-contain brightness-0 invert"
+            />
           </div>
 
           <div className="text-center text-sm space-y-2">
