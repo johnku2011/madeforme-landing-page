@@ -1,21 +1,34 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Menu, X, ChevronDown, Sparkles, FlaskConical, Leaf, 
   TrendingUp, Target, Users, Mail, Linkedin, Instagram,
   ArrowRight, CheckCircle2, Beaker, Brain, Microscope,
   Globe, Award, BookOpen
 } from 'lucide-react';
+import ScrollReveal from './components/ScrollReveal';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
     company: '',
     email: '',
     message: ''
   });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -35,6 +48,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Scroll Progress Bar */}
+      <div className="fixed top-0 left-0 w-full h-1 bg-gray-200 z-[60]">
+        <div 
+          className="h-full bg-gradient-to-r from-[#6B5B4F] via-[#D98C5A] to-[#6B5B4F] transition-all duration-150"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
+
       {/* Header / Navigation */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
         <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -165,9 +186,11 @@ export default function Home() {
       {/* Problem Statement */}
       <section id="problem" className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#6B5B4F] text-center mb-16">
-            A Vision to Redefine Beauty
-          </h2>
+          <ScrollReveal>
+            <h2 className="text-4xl sm:text-5xl font-bold text-[#6B5B4F] text-center mb-16">
+              A Vision to Redefine Beauty
+            </h2>
+          </ScrollReveal>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1">
@@ -231,41 +254,47 @@ export default function Home() {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-[#D98C5A] rounded-full flex items-center justify-center mb-6">
-                <Sparkles size={32} className="text-white" />
+            <ScrollReveal delay={100}>
+              <div className="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div className="w-16 h-16 bg-[#D98C5A] rounded-full flex items-center justify-center mb-6">
+                  <Sparkles size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
+                  Wrong Products Cause Irritation
+                </h3>
+                <p className="text-[#3C2F2F]">
+                  65.5% fragile skin → eczema in humid climates
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
-                Wrong Products Cause Irritation
-              </h3>
-              <p className="text-[#3C2F2F]">
-                65.5% fragile skin → eczema in humid climates
-              </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-[#D98C5A] rounded-full flex items-center justify-center mb-6">
-                <FlaskConical size={32} className="text-white" />
+            <ScrollReveal delay={200}>
+              <div className="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div className="w-16 h-16 bg-[#D98C5A] rounded-full flex items-center justify-center mb-6">
+                  <FlaskConical size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
+                  Health Concerns
+                </h3>
+                <p className="text-[#3C2F2F]">
+                  Conventional cosmetics → neurological & hormonal risks
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
-                Health Concerns
-              </h3>
-              <p className="text-[#3C2F2F]">
-                Conventional cosmetics → neurological & hormonal risks
-              </p>
-            </div>
+            </ScrollReveal>
 
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-[#D98C5A] rounded-full flex items-center justify-center mb-6">
-                <Leaf size={32} className="text-white" />
+            <ScrollReveal delay={300}>
+              <div className="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div className="w-16 h-16 bg-[#D98C5A] rounded-full flex items-center justify-center mb-6">
+                  <Leaf size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
+                  Rise of Clean Beauty
+                </h3>
+                <p className="text-[#3C2F2F]">
+                  76% seek natural ingredients · TCM + Guochao trend
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
-                Rise of Clean Beauty
-              </h3>
-              <p className="text-[#3C2F2F]">
-                76% seek natural ingredients · TCM + Guochao trend
-              </p>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -327,46 +356,52 @@ export default function Home() {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-[#6B5B4F] rounded-full flex items-center justify-center mb-6">
-                <Brain size={32} className="text-white" />
+            <ScrollReveal delay={100}>
+              <div className="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div className="w-16 h-16 bg-[#6B5B4F] rounded-full flex items-center justify-center mb-6">
+                  <Brain size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
+                  Biological Mechanisms
+                </h3>
+                <ul className="space-y-2 text-[#3C2F2F]">
+                  <li>• Investigate mechanisms</li>
+                  <li>• Knowledge graphs (LLMs)</li>
+                  <li>• Reverse-target analysis</li>
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
-                Biological Mechanisms
-              </h3>
-              <ul className="space-y-2 text-[#3C2F2F]">
-                <li>• Investigate mechanisms</li>
-                <li>• Knowledge graphs (LLMs)</li>
-                <li>• Reverse-target analysis</li>
-              </ul>
-            </div>
+            </ScrollReveal>
 
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-[#6B5B4F] rounded-full flex items-center justify-center mb-6">
-                <Leaf size={32} className="text-white" />
+            <ScrollReveal delay={200}>
+              <div className="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div className="w-16 h-16 bg-[#6B5B4F] rounded-full flex items-center justify-center mb-6">
+                  <Leaf size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
+                  Raw Material Discovery
+                </h3>
+                <ul className="space-y-2 text-[#3C2F2F]">
+                  <li>• Screen 1000s TCM herbs</li>
+                  <li>• AI ML models</li>
+                  <li>• MPU validation</li>
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
-                Raw Material Discovery
-              </h3>
-              <ul className="space-y-2 text-[#3C2F2F]">
-                <li>• Screen 1000s TCM herbs</li>
-                <li>• AI ML models</li>
-                <li>• MPU validation</li>
-              </ul>
-            </div>
+            </ScrollReveal>
 
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-[#6B5B4F] rounded-full flex items-center justify-center mb-6">
-                <Beaker size={32} className="text-white" />
+            <ScrollReveal delay={300}>
+              <div className="bg-white rounded-xl p-8 shadow-lg card-hover">
+                <div className="w-16 h-16 bg-[#6B5B4F] rounded-full flex items-center justify-center mb-6">
+                  <Beaker size={32} className="text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
+                  Active Ingredients Formulations
+                </h3>
+                <ul className="space-y-2 text-[#3C2F2F]">
+                  <li>• OEM formulation (Macao/China)</li>
+                  <li>• Commercialize: products, licensing, patents</li>
+                </ul>
               </div>
-              <h3 className="text-xl font-bold text-[#6B5B4F] mb-4">
-                Active Ingredients Formulations
-              </h3>
-              <ul className="space-y-2 text-[#3C2F2F]">
-                <li>• OEM formulation (Macao/China)</li>
-                <li>• Commercialize: products, licensing, patents</li>
-              </ul>
-            </div>
+            </ScrollReveal>
           </div>
 
           <div className="bg-white rounded-xl p-6 max-w-3xl mx-auto text-center shadow-lg border-2 border-[#D98C5A]">
