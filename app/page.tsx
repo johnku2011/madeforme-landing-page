@@ -47,6 +47,10 @@ export default function Home() {
     setFormData({ name: '', company: '', email: '', message: '' });
   };
 
+  const handlePartnerClick = () => {
+    alert('Stay tuned! We will be launching our partnership program soon.');
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Scroll Progress Bar */}
@@ -88,7 +92,7 @@ export default function Home() {
                 Contact
               </button>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={handlePartnerClick}
                 className="bg-[#D98C5A] text-white px-6 py-2.5 rounded-full hover:bg-[#C47A48] transition-colors font-medium"
               >
                 Partner with Us
@@ -127,7 +131,7 @@ export default function Home() {
                   Contact
                 </button>
                 <button 
-                  onClick={() => scrollToSection('contact')}
+                  onClick={handlePartnerClick}
                   className="bg-[#D98C5A] text-white px-6 py-2.5 rounded-full hover:bg-[#C47A48] transition-colors font-medium text-left"
                 >
                   Partner with Us
@@ -165,7 +169,7 @@ export default function Home() {
                 <ArrowRight size={20} />
               </button>
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={handlePartnerClick}
                 className="bg-white text-[#6B5B4F] border-2 border-[#6B5B4F] px-8 py-4 rounded-full hover:bg-[#F5F0E9] transition-colors font-medium text-lg"
               >
                 Contact for Licensing
@@ -197,12 +201,12 @@ export default function Home() {
             <div className="order-2 lg:order-1">
               <div className="bg-[#F5F0E9] rounded-2xl p-8 overflow-hidden">
                 <div className="text-center">
-                  <div className="relative w-full max-w-md mx-auto aspect-[4/3] mb-4">
+                  <div className="relative w-full max-w-md mx-auto aspect-[3/4] mb-4">
                     <Image
-                      src="/founder-eunice2.png"
+                      src="/founder-eunice.jpg"
                       alt="Eunice Wai, Founder of Made4Me"
                       fill
-                      className="object-contain rounded-lg"
+                      className="object-cover rounded-lg"
                       priority
                     />
                   </div>
@@ -479,10 +483,14 @@ export default function Home() {
           </p>
           
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div className="bg-[#F5F0E9] rounded-2xl p-12 h-96 flex items-center justify-center">
-              <div className="text-center">
-                <Sparkles size={120} className="text-[#D98C5A] mx-auto" />
-                <p className="text-[#3C2F2F] mt-4 text-sm">Hawthorn berries + Product mockups</p>
+            <div className="bg-[#F5F0E9] rounded-2xl p-8 overflow-hidden">
+              <div className="relative w-full aspect-square">
+                <Image
+                  src="/product-demo.png"
+                  alt="Hawthorn Whitening Collection Products"
+                  fill
+                  className="object-contain"
+                />
               </div>
             </div>
             
@@ -636,8 +644,13 @@ export default function Home() {
             <h3 className="text-2xl font-bold text-[#6B5B4F] text-center mb-8">Founders</h3>
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="bg-[#F5F0E9] rounded-xl p-8 text-center">
-                <div className="w-32 h-32 bg-[#6B5B4F] rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users size={60} className="text-white" />
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image
+                    src="/founder-eunice.jpg"
+                    alt="Eunice Wai"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h4 className="text-xl font-bold text-[#6B5B4F] mb-2">Eunice Wai</h4>
                 <p className="text-[#D98C5A] font-medium mb-4">Founder, Team Leader</p>
@@ -649,8 +662,13 @@ export default function Home() {
               </div>
 
               <div className="bg-[#F5F0E9] rounded-xl p-8 text-center">
-                <div className="w-32 h-32 bg-[#6B5B4F] rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users size={60} className="text-white" />
+                <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                  <Image
+                    src="/founder-jk.JPG"
+                    alt="John Ku"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <h4 className="text-xl font-bold text-[#6B5B4F] mb-2">John Ku</h4>
                 <p className="text-[#D98C5A] font-medium mb-4">Member</p>
@@ -668,19 +686,40 @@ export default function Home() {
             <h3 className="text-2xl font-bold text-[#6B5B4F] text-center mb-8">Technical Advisors</h3>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <div className="bg-[#F5F0E9] rounded-xl p-6 text-center">
-                <Microscope size={40} className="text-[#D98C5A] mx-auto mb-3" />
+                <div className="relative w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden">
+                  <Image
+                    src="/Kang Wen Qing Qing.png"
+                    alt="Kang Wen Qing Qing"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <h4 className="font-bold text-[#6B5B4F] mb-2">Kang Wen Qing Qing</h4>
                 <p className="text-sm text-[#3C2F2F]">PhD Candidate<br />AI Drug Discovery</p>
               </div>
 
               <div className="bg-[#F5F0E9] rounded-xl p-6 text-center">
-                <BookOpen size={40} className="text-[#D98C5A] mx-auto mb-3" />
+                <div className="relative w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden">
+                  <Image
+                    src="/Li Shu.png"
+                    alt="Li Shu"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <h4 className="font-bold text-[#6B5B4F] mb-2">Li Shu</h4>
                 <p className="text-sm text-[#3C2F2F]">Ph.D. Computational Biology<br />Peking University</p>
               </div>
 
               <div className="bg-[#F5F0E9] rounded-xl p-6 text-center">
-                <FlaskConical size={40} className="text-[#D98C5A] mx-auto mb-3" />
+                <div className="relative w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden">
+            <Image
+                    src="/henry.jpg"
+                    alt="Henry Tong"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
                 <h4 className="font-bold text-[#6B5B4F] mb-2">Henry Tong</h4>
                 <p className="text-sm text-[#3C2F2F]">Professor<br />Pharmaceutical Formulation</p>
               </div>
@@ -692,25 +731,6 @@ export default function Home() {
       {/* CTA / Contact */}
       <section id="contact" className="py-20 bg-gradient-to-b from-[#F5F0E9] to-[#E5DDD0]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#6B5B4F] text-center mb-6">
-            Ready to Redefine Beauty with AI?
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            <div className="text-center p-6">
-              <h3 className="font-bold text-[#6B5B4F] mb-2">For Brands</h3>
-              <p className="text-[#3C2F2F]">License our AI-discovered actives</p>
-            </div>
-            <div className="text-center p-6">
-              <h3 className="font-bold text-[#6B5B4F] mb-2">For Partners</h3>
-              <p className="text-[#3C2F2F]">Custom R&D collaboration</p>
-            </div>
-            <div className="text-center p-6">
-              <h3 className="font-bold text-[#6B5B4F] mb-2">For Investors</h3>
-              <p className="text-[#3C2F2F]">Join the wellness revolution</p>
-            </div>
-          </div>
-
           <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-8 md:p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
@@ -803,24 +823,12 @@ export default function Home() {
             <p className="text-sm tracking-widest">AI MOLECULAR BEAUTY LAB</p>
           </div>
 
-          <div className="flex justify-center gap-6 mb-8">
-            <a href="#" className="hover:text-[#D98C5A] transition-colors" aria-label="LinkedIn">
-              <Linkedin size={24} />
-            </a>
-            <a href="#" className="hover:text-[#D98C5A] transition-colors" aria-label="Instagram">
-              <Instagram size={24} />
-            </a>
-            <a href="#" className="hover:text-[#D98C5A] transition-colors" aria-label="WeChat">
-              <Mail size={24} />
-            </a>
-          </div>
-
           <div className="text-center text-sm space-y-2">
             <p>© 2025 AI Molecular Beauty Lab | All Rights Reserved</p>
             <div className="flex justify-center gap-4">
-              <a href="#" className="hover:text-[#D98C5A] transition-colors">Privacy Policy</a>
+              <a href="/privacy" className="hover:text-[#D98C5A] transition-colors">Privacy Policy</a>
               <span>|</span>
-              <a href="#" className="hover:text-[#D98C5A] transition-colors">Terms of Use</a>
+              <a href="/terms" className="hover:text-[#D98C5A] transition-colors">Terms of Use</a>
             </div>
           </div>
         </div>
