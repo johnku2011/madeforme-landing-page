@@ -201,11 +201,10 @@ Copyright © 2025 Made4Me AI Molecular Beauty Lab. All Rights Reserved.
 
 ## 🤝 Contributing
 
-This is a private project. For questions or suggestions, contact hello@made4me.ai
+This is a private project. For questions or suggestions. Submit Pull Requests.
 
 ## 📞 Contact
 
-- **Email**: hello@made4me.ai
 - **Location**: Macao SAR
 - **Website**: [Your Domain]
 
